@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ator.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-card *ngIf="ator">
+
+    <ion-card-header>
+      <img *ngIf="ator.foto" src="{{ator.foto}}" />
+      <ion-icon *ngIf="!ator.foto" name="videocam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{ator.nome}} <ion-icon name="star" [color]="ator.favorito===true ? 'warning' : ('light')"></ion-icon></h1>
+      <p>{{ator.nascimento}}</p>
+    </ion-card-content>
+    
+  </ion-card>
+
+</ion-content>
+
